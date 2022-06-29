@@ -189,6 +189,11 @@ _G.packer_plugins = {
     path = "/Users/10018445/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/Users/10018445/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
   ["nvim-ts-context-commentstring"] = {
     loaded = true,
     path = "/Users/10018445/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
@@ -244,15 +249,20 @@ _G.packer_plugins = {
     path = "/Users/10018445/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
+  ["vim-css-color"] = {
+    loaded = true,
+    path = "/Users/10018445/.local/share/nvim/site/pack/packer/start/vim-css-color",
+    url = "https://github.com/ap/vim-css-color"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/10018445/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/Users/10018445/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
-  },
-  ["windwp nvim-ts-autotag"] = {
-    loaded = true,
-    path = "/Users/10018445/.local/share/nvim/site/pack/packer/start/windwp nvim-ts-autotag",
-    url = "https://github.com/windwp nvim-ts-autotag"
   }
 }
 

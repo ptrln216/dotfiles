@@ -3,8 +3,7 @@ if not status_ok then
 	return
 end
 project.setup({
-	---@usage set to false to disable project.nvim.
-	--- This is on by default since it's currently the expected behavior.
+	---@usage set to false to disable project.nvim. - This is on by default since it's currently the expected behavior.
 	active = true,
 
 	on_config_done = nil,
@@ -23,10 +22,10 @@ project.setup({
 	detection_methods = { "pattern" },
 
 	---@usage patterns used to detect root dir, when **"pattern"** is in detection_methods
-	patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
+	patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "lua" },
 
 	---@ Show hidden files in telescope when searching for files in a project
-	show_hidden = false,
+	show_hidden = true,
 
 	---@usage When set to false, you will get a message when project.nvim changes your directory.
 	-- When set to false, you will get a message when project.nvim changes your directory.

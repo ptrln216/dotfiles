@@ -51,6 +51,12 @@ keymap("n", "<leader>k", ":m .-2<CR>==", opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>s", "<cmd>Telescope live_grep<cr>", opts)
 
+-- Rename
+-- for local replace
+keymap("n", "<leader>r", "gd[{V%::s/<C-R>///gc<left><left><left>", opts)
+-- for global replace
+keymap("n", "<leader>R", "gD:%s/<C-R>///gc<left><left><left>", opts)
+
 -- Insert --
 -- Press jk fast to enter
 -- keymap("i", "jk", "<ESC>", opts)
