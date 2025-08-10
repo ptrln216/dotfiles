@@ -7,6 +7,7 @@ echo "Starting environment setup..."
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "Installing Oh My Zsh..."
   RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  rm .zshrc
 else
   echo "Oh My Zsh already installed."
 fi
