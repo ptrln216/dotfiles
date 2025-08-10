@@ -3,6 +3,30 @@ set -e
 
 echo "Starting environment setup..."
 
+# Get the directory of this script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Install Homebrew if not installed
+if ! command -v brew &>/dev/null; then
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Install Git if not installed
+if ! command -v git &>/dev/null; then
+  echo "Installing Git with Homebrew..."
+  brew install git
+fi
+
+# Install everything from Brewfile
+BREWFILE_PATH="$SCRIPT_DIR/Brewfile"
+if [[ -f "$BREWFILE_PATH" ]]; then
+  echo "Installing from Brewfile..."
+  brew bundle --file="$BREWFILE_PATH"
+else
+  echo "No Brewfile found at $BREWFILE_PATH"
+fi
+
 # Clone Oh My Zsh if not present
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "Installing Oh My Zsh..."
@@ -39,6 +63,15 @@ if [ ! -d "$HOME/.nvm" ]; then
   git clone https://github.com/nvm-sh/nvm.git .nvm
 else
   echo "nvm already installed."
+fi
+
+# Stow zsh config after setup
+if command -v stow &>/dev/null; then
+  echo "Stowing zsh config..."
+  cd "$SCRIPT_DIR"
+  stow zsh
+else
+  echo "stow not found — please ensure it's listed in your Brewfile."
 fi
 
 echo "Setup complete!"
