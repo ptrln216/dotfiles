@@ -31,7 +31,6 @@ fi
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "Installing Oh My Zsh..."
   RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  rm .zshrc
 else
   echo "Oh My Zsh already installed."
 fi
@@ -69,6 +68,13 @@ fi
 if command -v stow &>/dev/null; then
   echo "Stowing zsh config..."
   cd "$SCRIPT_DIR"
+
+  ZSHRC_PATH="$HOME/.zshrc"
+  if [[ -f "$ZSHRC_PATH" ]]; then
+    echo "Removing existing .zshrc..."
+    rm "$ZSHRC_PATH"
+  fi
+
   stow zsh
 else
   echo "stow not found — please ensure it's listed in your Brewfile."
