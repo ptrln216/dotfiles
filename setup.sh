@@ -49,9 +49,9 @@ else
 fi
 
 # --- 5. Install nvm if missing ---
-if [ ! -d "$HOME/.nvm" ]; then
-  echo "Cloning nvm..."
-  git clone https://github.com/nvm-sh/nvm.git .nvm
+if [[ ! -d "$ZSH_CUSTOM/plugins/zsh-nvm" ]]; then
+  echo "Installing nvm..."
+  git clone https://github.com/lukechilds/zsh-nvm "$ZSH_CUSTOM/plugins/zsh-nvm"
 else
   echo "🛠 nvm already installed."
 fi

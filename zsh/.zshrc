@@ -76,12 +76,17 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Auto use - If it's enabled, when you cd into a directory with an .nvmrc file,
+# zsh-nvm will automatically load or install the required node version in .nvmrc. 
+# It must be set before zsh-nvm is loaded.
+export NVM_AUTO_USE=true
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting z)
+plugins=(zsh-nvm git zsh-syntax-highlighting z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,10 +126,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.aliases.zsh ]; then
   source ~/.aliases.zsh
 fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
