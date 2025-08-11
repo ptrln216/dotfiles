@@ -1,3 +1,5 @@
+# Distributed revision control system
+brew "git"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Fast, disk space efficient package manager
