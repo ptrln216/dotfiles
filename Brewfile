@@ -4,6 +4,8 @@ brew "git"
 brew "neovim"
 # Fast, disk space efficient package manager
 brew "pnpm"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # AI-powered productivity tool for the command-line
