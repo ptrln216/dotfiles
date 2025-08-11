@@ -1,15 +1,15 @@
 # Dotfiles & Environment Setup
 
-This repository contains development environment configuration and automated setup script.  
-It makes having the same essential tools, apps, and shell configuration easy - making environment setup fast and consistent with one command.
+A simple way to set up a consistent macOS development environment with one command.  
+Includes shell configuration, CLI tools, apps, and Node.js setup.
 
 ## Quick Start
 
 ### 1. Set Up Git SSH
 
-Apple macOS includes Git by default, so first ensure your SSH keys are set up to securely clone repositories.
+macOS includes Git by default. First, configure SSH to securely clone repositories.
 
-If you already have SSH keys set up and added to your Git provider, you can skip this step.
+If you already have SSH keys set up and added to your Git provider, skip this step.
 
 1. Generate a new SSH key (if needed):
 
@@ -37,24 +37,55 @@ If you already have SSH keys set up and added to your Git provider, you can skip
 
    [GitHub SSH setup guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
-### 2. Clone Dotfiles & Run Setup Script
-
-Once SSH is set up, clone the dotfiles repository:
+### 2. Clone & Run Setup Script
 
 ```bash
 git clone git@github.com:ptrln216/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-
 chmod +x setup.sh
 ./setup.sh
 ```
 
-The setup.sh script will:
+**What setup.sh does:**
 
-- Install Homebrew if missing
-- Install all CLI tools and apps listed in the Brewfile
-- Install Oh My Zsh if missing
-- Clone zsh-syntax-highlighting and powerlevel10k plugins
-- Install nvm (Node Version Manager)
-- Apply your Zsh configuration with GNU Stow
-- Prompt you to input your Git global username and email if they are not set
+- Installs Homebrew (if missing)
+- Installs CLI tools & apps from Brewfile
+- Installs Oh My Zsh (if missing) with plugins & themes
+- Applies Zsh config via GNU Stow
+- Prompts for Git username & email (if unset)
+
+### 3. Install Node.js (if missing)
+
+If node is not installed yet, run below command
+
+```bash
+nvm install --lts   # Latest Node.js LTS
+node -v             # Verify installation
+```
+
+### 🎉 Congratulations
+
+You're ready to go! You now have a consistent, reproducible setup for future machines, including:
+
+#### A fully configured Zsh shell
+
+- powerlevel10k (theme)
+- zsh-syntax-highlighting
+- z
+- git
+- zsh-nvm
+
+#### Essential CLI tools and productivity apps
+
+- git
+- neovim
+- pnpm
+- ripgrep
+- stow
+- amazon-q
+- font-sauce-code-pro-nerd-font
+- visual-studio-code
+
+#### Node.js (latest LTS) via nvm
+
+#### Git configured with your name & email
