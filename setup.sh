@@ -59,6 +59,13 @@ fi
 # --- 6. Apply dotfiles with GNU Stow ---
 if command -v stow >/dev/null 2>&1; then
   echo "📂 Applying dotfiles using GNU Stow..."
+
+  ZSHRC_PATH="$HOME/.zshrc"
+  if [[ -f "$ZSHRC_PATH" ]]; then
+    echo "Removing existing .zshrc..."
+    rm "$ZSHRC_PATH"
+  fi
+
   stow zsh
 else
   echo "⚠️ GNU Stow not found. Please install it manually or add it to Brewfile."
