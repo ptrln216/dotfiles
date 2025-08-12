@@ -63,6 +63,10 @@ nvm install --lts   # Latest Node.js LTS
 node -v             # Verify installation
 ```
 
+### 4. (Optional) NeoVim Config
+
+Use NvChad, check the [installation guide](https://nvchad.com/docs/quickstart/install).
+
 ### 🎉 Congratulations
 
 You're ready to go! You now have a consistent, reproducible setup for future machines, including:
