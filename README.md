@@ -75,9 +75,9 @@ You're ready to go! You now have a consistent, reproducible setup for future mac
 
 - powerlevel10k (theme)
 - zsh-syntax-highlighting
-- z
-- git
-- zsh-nvm
+- z - remember your frequent visit paths
+- git - convenient aliases for git operations
+- zsh-nvm - auto use node version as listed in .nvmrc
 
 #### Essential CLI tools and productivity apps
 
