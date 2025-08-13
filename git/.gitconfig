@@ -1,0 +1,5 @@
+[user]
+	email = 
+	name = Peter Lin
+[push]
+	autoSetupRemote = true
