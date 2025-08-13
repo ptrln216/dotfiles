@@ -66,7 +66,7 @@ if command -v stow >/dev/null 2>&1; then
     rm "$ZSHRC_PATH"
   fi
 
-  stow zsh
+  stow zsh git 
 else
   echo "⚠️ GNU Stow not found. Please install it manually or add it to Brewfile."
 fi
