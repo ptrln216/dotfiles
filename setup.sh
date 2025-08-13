@@ -75,11 +75,14 @@ fi
 current_name=$(git config --global user.name || true)
 current_email=$(git config --global user.email || true)
 
-if [[ -z "$current_name" || -z "$current_email" ]]; then
-  echo "🔧 Git global user.name and/or user.email not set."
+if [[ -z "$current_name" ]]; then
+  echo "🔧 Git global user.name not set."
   read -rp "Enter your full name for Git config: " git_name
   git config --global user.name "$git_name"
+fi
 
+if [[ -z "$current_email" ]]; then
+  echo "🔧 Git global user.email not set."
   read -rp "Enter your email address for Git config: " git_email
   git config --global user.email "$git_email"
 fi
